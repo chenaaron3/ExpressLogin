@@ -7,6 +7,8 @@ var con = mysql.createConnection({
     port: process.env.PORT || 3000
 });
 
+console.log(process.env.PORT);
+
 con.connect(function (err) {
     if (err) throw err;
     console.log("Database Connected!")
