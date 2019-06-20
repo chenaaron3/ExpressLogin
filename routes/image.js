@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var multer = require('multer');
 var path = require("path")
-var DataURI = require('datauri').promise;
 
+// only works with localhost
 var storage = multer.diskStorage({
     destination:function(req, file, cb){
         cb(null, "public\\uploads");
@@ -21,6 +21,7 @@ router.get('/request', function(req, res, next) {
     res.end();
 });
 
+// only works with localhost
 router.post('/echo', upload.single("image"), function(req, res, next){
    console.log("Received Image");
    console.log(req.file);

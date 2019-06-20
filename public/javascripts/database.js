@@ -1,5 +1,5 @@
 var mysql = require("mysql");
-const table = "input";
+const table = "login";
 
 var con = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -14,6 +14,7 @@ con.connect(function (err) {
     console.log("Database Connected!")
     checkIfTableExists();
 });
+
 
 function checkIfTableExists()
 {
