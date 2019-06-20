@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Image!</title>
+    </head>
+    <body>
+<!--        can only choose image-->
+        <form method="post" enctype="multipart/form-data" action="./echo">
+            <input type="file" accept="image/*" name="image">
+            <input type="submit">
+        </form>
+        <img src="<%= typeof file != 'undefined' ? file : '' %>" id="image">
+    </body>
+</html>
