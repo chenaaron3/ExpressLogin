@@ -5,8 +5,14 @@ var con = mysql.createConnection({
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
-    timeout: 15000
+    timeout: 60000
 });
+
+console.log("host: " + process.env.DB_HOST);
+console.log("user: " + process.env.DB_USER);
+console.log("pass: " + process.env.DB_PASS);
+console.log("name: " + process.env.DB_NAME);
+
 
 con.connect(function (err) {
     if (err) throw err;
