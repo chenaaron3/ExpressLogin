@@ -1,4 +1,5 @@
 var mysql = require("mysql");
+const table = "input";
 
 var con = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -8,20 +9,50 @@ var con = mysql.createConnection({
     timeout: 60000
 });
 
-console.log("host: " + process.env.DB_HOST);
-console.log("user: " + process.env.DB_USER);
-console.log("pass: " + process.env.DB_PASS);
-console.log("name: " + process.env.DB_NAME);
-
-
 con.connect(function (err) {
     if (err) throw err;
     console.log("Database Connected!")
+    checkIfTableExists();
 });
+
+function checkIfTableExists()
+{
+    con.query(`SHOW TABLES LIKE '${table}'`, function (err, result, fields) {
+        if (err) throw err;
+        if(result.length > 0)
+        {
+            console.log("Table exists!");
+        }
+        else
+        {
+            console.log("Table does not exist!");
+            var sql = `CREATE TABLE ${table}(id int AUTO_INCREMENT, name varchar(30) NOT NULL, username varchar(30) NOT NULL, 
+                password varchar(30) NOT NULL, PRIMARY KEY(id))`;
+            con.query(sql, function (err, result) {
+                if (err) throw err;
+                console.log("Table created!");
+            });
+        }
+    });
+}
+
+function deleteTable(name)
+{
+    con.query(`DROP TABLE ${name}`, function(err, result){
+       if (err)
+       {
+           console.log(name + " does not exist!");
+       }
+       else
+       {
+           console.log("Deleted Table: " + name);
+       }
+    });
+}
 
 function addToDatabase(name, username, password)
 {
-    var sql = `INSERT INTO login(name, username, password) VALUES("${name}" ,"${username}" ,"${password}")`;
+    var sql = `INSERT INTO ${table}(name, username, password) VALUES("${name}" ,"${username}" ,"${password}")`;
     con.query(sql, function (err, result) {
         if (err) throw err;
         console.log("Inserted: " + sql);
@@ -30,7 +61,7 @@ function addToDatabase(name, username, password)
 
 function getAllLogin(callback)
 {
-    con.query("SELECT DISTINCT name, username, password FROM login", function (err, result, fields) {
+    con.query(`SELECT DISTINCT name, username, password FROM ${table}`, function (err, result, fields) {
         if (err) throw err;
         console.log(result);
         callback(result);

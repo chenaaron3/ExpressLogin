@@ -1,0 +1,101 @@
+2019-06-20T03:12:28.210498+00:00 heroku[web.1]: Process exited with status 1
+2019-06-20T03:12:31.158490+00:00 heroku[web.1]: Starting process with command `npm start`
+2019-06-20T03:12:34.477385+00:00 app[web.1]: 
+2019-06-20T03:12:34.477412+00:00 app[web.1]: > helloexpress@0.0.0 start /app
+2019-06-20T03:12:34.477414+00:00 app[web.1]: > node ./bin/www
+2019-06-20T03:12:34.477416+00:00 app[web.1]: 
+2019-06-20T03:12:35.376630+00:00 heroku[web.1]: State changed from starting to up
+2019-06-20T03:12:35.244924+00:00 app[web.1]: Database Connected!
+2019-06-20T03:13:34.969990+00:00 app[web.1]: events.js:174
+2019-06-20T03:13:34.970005+00:00 app[web.1]: throw er; // Unhandled 'error' event
+2019-06-20T03:13:34.970007+00:00 app[web.1]: ^
+2019-06-20T03:13:34.970009+00:00 app[web.1]: 
+2019-06-20T03:13:34.970011+00:00 app[web.1]: Error: Connection lost: The server closed the connection.
+2019-06-20T03:13:34.970014+00:00 app[web.1]: at Protocol.end (/app/node_modules/mysql/lib/protocol/Protocol.js:112:13)
+2019-06-20T03:13:34.970017+00:00 app[web.1]: at Socket.<anonymous> (/app/node_modules/mysql/lib/Connection.js:97:28)
+2019-06-20T03:13:34.970019+00:00 app[web.1]: at Socket.<anonymous> (/app/node_modules/mysql/lib/Connection.js:525:10)
+2019-06-20T03:13:34.970021+00:00 app[web.1]: at Socket.emit (events.js:203:15)
+2019-06-20T03:13:34.970023+00:00 app[web.1]: at endReadableNT (_stream_readable.js:1129:12)
+2019-06-20T03:13:34.970025+00:00 app[web.1]: at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-06-20T03:13:34.970028+00:00 app[web.1]: Emitted 'error' event at:
+2019-06-20T03:13:34.970031+00:00 app[web.1]: at Connection._handleProtocolError (/app/node_modules/mysql/lib/Connection.js:426:8)
+2019-06-20T03:13:34.970033+00:00 app[web.1]: at Protocol.emit (events.js:198:13)
+2019-06-20T03:13:34.970035+00:00 app[web.1]: at Protocol._delegateError (/app/node_modules/mysql/lib/protocol/Protocol.js:398:10)
+2019-06-20T03:13:34.970037+00:00 app[web.1]: at Protocol.end (/app/node_modules/mysql/lib/protocol/Protocol.js:116:8)
+2019-06-20T03:13:34.970040+00:00 app[web.1]: at Socket.<anonymous> (/app/node_modules/mysql/lib/Connection.js:97:28)
+2019-06-20T03:13:34.970042+00:00 app[web.1]: [... lines matching original stack trace ...]
+2019-06-20T03:13:34.970044+00:00 app[web.1]: at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-06-20T03:13:34.980257+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2019-06-20T03:13:34.980884+00:00 app[web.1]: npm ERR! errno 1
+2019-06-20T03:13:34.982628+00:00 app[web.1]: npm ERR! helloexpress@0.0.0 start: `node ./bin/www`
+2019-06-20T03:13:34.982843+00:00 app[web.1]: npm ERR! Exit status 1
+2019-06-20T03:13:34.983166+00:00 app[web.1]: npm ERR!
+2019-06-20T03:13:34.983388+00:00 app[web.1]: npm ERR! Failed at the helloexpress@0.0.0 start script.
+2019-06-20T03:13:34.983599+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2019-06-20T03:13:35.003373+00:00 app[web.1]: 
+2019-06-20T03:13:35.003693+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2019-06-20T03:13:35.003856+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2019-06-20T03_13_34_985Z-debug.log
+2019-06-20T03:13:35.092785+00:00 heroku[web.1]: State changed from up to crashed
+2019-06-20T03:13:35.074339+00:00 heroku[web.1]: Process exited with status 1
+2019-06-20T03:14:24.037304+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/public/stylesheets/style.css" host=pure-fortress-93535.herokuapp.com request_id=78469a3a-251d-4b6d-b227-34806fc8976a fwd="99.52.201.167" dyno= connect= service= status=503 bytes= protocol=https
+2019-06-20T03:16:14.000000+00:00 app[api]: Build started by user apkirito1@gmail.com
+2019-06-20T03:16:33.881834+00:00 heroku[web.1]: State changed from crashed to starting
+2019-06-20T03:16:33.605123+00:00 app[api]: Release v13 created by user apkirito1@gmail.com
+2019-06-20T03:16:33.605123+00:00 app[api]: Deploy 3d1e6db8 by user apkirito1@gmail.com
+2019-06-20T03:16:34.000000+00:00 app[api]: Build succeeded
+2019-06-20T03:16:36.336111+00:00 heroku[web.1]: Starting process with command `npm start`
+2019-06-20T03:16:38.325727+00:00 app[web.1]: 
+2019-06-20T03:16:38.325748+00:00 app[web.1]: > helloexpress@0.0.0 start /app
+2019-06-20T03:16:38.325750+00:00 app[web.1]: > node ./bin/www
+2019-06-20T03:16:38.325752+00:00 app[web.1]: 
+2019-06-20T03:16:38.601885+00:00 app[web.1]: host: us-cdbr-iron-east-02.cleardb.net
+2019-06-20T03:16:38.604665+00:00 app[web.1]: user: bd1d4d714d33b5
+2019-06-20T03:16:38.604819+00:00 app[web.1]: pass: f89f46e6
+2019-06-20T03:16:38.604906+00:00 app[web.1]: name: heroku_a6378078682daa8
+2019-06-20T03:16:38.766831+00:00 app[web.1]: Database Connected!
+2019-06-20T03:16:39.013158+00:00 heroku[web.1]: State changed from starting to up
+2019-06-20T03:16:42.451520+00:00 app[web.1]: [0mGET / [36m304 [0m13.331 ms - -[0m
+2019-06-20T03:16:42.559211+00:00 app[web.1]: [0mGET /public/stylesheets/style.css [33m404 [0m4.683 ms - 41[0m
+2019-06-20T03:16:42.460303+00:00 heroku[router]: at=info method=GET path="/" host=pure-fortress-93535.herokuapp.com request_id=b8645d1a-1a49-4737-b1d4-82a819315d08 fwd="99.52.201.167" dyno=web.1 connect=0ms service=28ms status=304 bytes=151 protocol=https
+2019-06-20T03:16:42.562035+00:00 heroku[router]: at=info method=GET path="/public/stylesheets/style.css" host=pure-fortress-93535.herokuapp.com request_id=8a1653b6-83de-448e-8977-2be08be8df64 fwd="99.52.201.167" dyno=web.1 connect=0ms service=7ms status=404 bytes=248 protocol=https
+2019-06-20T03:16:47.106633+00:00 heroku[web.1]: Process exited with status 1
+2019-06-20T03:16:47.031249+00:00 app[web.1]: [Object: null prototype] { name: '4', username: '5', password: '6', submit: 'Submit' }
+2019-06-20T03:16:47.033203+00:00 app[web.1]: /app/node_modules/mysql/lib/protocol/Parser.js:437
+2019-06-20T03:16:47.033206+00:00 app[web.1]: throw err; // Rethrow non-MySQL errors
+2019-06-20T03:16:47.033208+00:00 app[web.1]: ^
+2019-06-20T03:16:47.033210+00:00 app[web.1]: 
+2019-06-20T03:16:47.033212+00:00 app[web.1]: Error: ER_NO_SUCH_TABLE: Table 'heroku_a6378078682daa8.login' doesn't exist
+2019-06-20T03:16:47.033219+00:00 app[web.1]: at Query.Sequence._packetToError (/app/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+2019-06-20T03:16:47.033220+00:00 app[web.1]: at Query.ErrorPacket (/app/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+2019-06-20T03:16:47.033222+00:00 app[web.1]: at Protocol._parsePacket (/app/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+2019-06-20T03:16:47.033224+00:00 app[web.1]: at Parser._parsePacket (/app/node_modules/mysql/lib/protocol/Parser.js:433:10)
+2019-06-20T03:16:47.033225+00:00 app[web.1]: at Parser.write (/app/node_modules/mysql/lib/protocol/Parser.js:43:10)
+2019-06-20T03:16:47.033227+00:00 app[web.1]: at Protocol.write (/app/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+2019-06-20T03:16:47.033228+00:00 app[web.1]: at Socket.<anonymous> (/app/node_modules/mysql/lib/Connection.js:91:28)
+2019-06-20T03:16:47.033230+00:00 app[web.1]: at Socket.<anonymous> (/app/node_modules/mysql/lib/Connection.js:525:10)
+2019-06-20T03:16:47.033231+00:00 app[web.1]: at Socket.emit (events.js:198:13)
+2019-06-20T03:16:47.033233+00:00 app[web.1]: at addChunk (_stream_readable.js:288:12)
+2019-06-20T03:16:47.033235+00:00 app[web.1]: --------------------
+2019-06-20T03:16:47.033236+00:00 app[web.1]: at Protocol._enqueue (/app/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+2019-06-20T03:16:47.033238+00:00 app[web.1]: at Connection.query (/app/node_modules/mysql/lib/Connection.js:201:25)
+2019-06-20T03:16:47.033239+00:00 app[web.1]: at Object.addToDatabase (/app/public/javascripts/database.js:25:9)
+2019-06-20T03:16:47.033241+00:00 app[web.1]: at /app/routes/index.js:13:12
+2019-06-20T03:16:47.033242+00:00 app[web.1]: at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2019-06-20T03:16:47.033244+00:00 app[web.1]: at next (/app/node_modules/express/lib/router/route.js:137:13)
+2019-06-20T03:16:47.033245+00:00 app[web.1]: at Route.dispatch (/app/node_modules/express/lib/router/route.js:112:3)
+2019-06-20T03:16:47.033247+00:00 app[web.1]: at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2019-06-20T03:16:47.033249+00:00 app[web.1]: at /app/node_modules/express/lib/router/index.js:281:22
+2019-06-20T03:16:47.033250+00:00 app[web.1]: at Function.process_params (/app/node_modules/express/lib/router/index.js:335:12)
+2019-06-20T03:16:47.041719+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2019-06-20T03:16:47.042190+00:00 app[web.1]: npm ERR! errno 1
+2019-06-20T03:16:47.043330+00:00 app[web.1]: npm ERR! helloexpress@0.0.0 start: `node ./bin/www`
+2019-06-20T03:16:47.043500+00:00 app[web.1]: npm ERR! Exit status 1
+2019-06-20T03:16:47.043753+00:00 app[web.1]: npm ERR!
+2019-06-20T03:16:47.043927+00:00 app[web.1]: npm ERR! Failed at the helloexpress@0.0.0 start script.
+2019-06-20T03:16:47.044088+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2019-06-20T03:16:47.051523+00:00 app[web.1]: 
+2019-06-20T03:16:47.051705+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2019-06-20T03:16:47.051786+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2019-06-20T03_16_47_045Z-debug.log
+2019-06-20T03:16:47.125241+00:00 heroku[web.1]: State changed from up to crashed
+2019-06-20T03:16:47.040653+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=POST path="/" host=pure-fortress-93535.herokuapp.com request_id=8d66b407-301a-4435-986e-14d0dd291e7f fwd="99.52.201.167" dyno=web.1 connect=0ms service=28ms status=503 bytes=0 protocol=https
+Terminate batch job (Y/N)? y
