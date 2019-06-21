@@ -4,12 +4,15 @@
         <title>Image!</title>
     </head>
     <body>
-<!--        can only choose image-->
+        <%if(requestFile){%>
         <form method="post" enctype="multipart/form-data" action="./echo">
             <input type="file" accept="image/*" name="image">
             <input type="submit">
         </form>
+        <%}%>
         <br>
-        <img src="<%= typeof file != 'undefined' ? file : '' %>" id="image">
+        <%for(var j = 0; j < blobs.length; j++){%>
+        <img src="<%= blobs[j]["file"]%>" name="image">
+        <%}%>
     </body>
 </html>
