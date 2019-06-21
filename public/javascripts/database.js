@@ -13,6 +13,16 @@ var con = mysql.createConnection({
 con.connect(function (err) {
     if (err) throw err;
     console.log("Database Connected!")
+    console.log(process.env.CLEAR_LOGIN);
+    console.log(process.env.CLEAR_IMAGE);
+    if(process.env.CLEAR_LOGIN === "true")
+    {
+        deleteTable(loginTable);
+    }
+    if(process.env.CLEAR_IMAGE === "true")
+    {
+        deleteTable(imageTable);
+    }
     checkIfTableExists(loginTable);
     checkIfTableExists(imageTable);
 });
