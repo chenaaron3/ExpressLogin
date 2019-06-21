@@ -27,10 +27,18 @@ con.connect(function (err) {
     checkIfTableExists(loginTable);
     checkIfTableExists(imageTable);
 });
+// handles the first time the connection is lost
+con.on('error', function(err) {
+    console.log('db error', err);
+    if(err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
+        handleDisconnect();                         // lost due to either server restart, or a
+    } else {                                      // connnection idle timeout (the wait_timeout
+        throw err;                                  // server variable configures this)
+    }
+});
 
 function handleDisconnect() {
-    console.log("Refreshing connection...");
-    con.destroy();
+    console.log("Attempting to reconnect...");
     con = mysql.createConnection(config); // Recreate the connection, since
                                                     // the old one cannot be reused.
 
@@ -50,8 +58,6 @@ function handleDisconnect() {
         }
     });
 }
-
-setInterval(handleDisconnect, 5000);
 
 function checkIfTableExists(name)
 {
