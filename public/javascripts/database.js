@@ -2,19 +2,20 @@ var mysql = require("mysql");
 const loginTable = "login";
 const imageTable = "image";
 
-var con = mysql.createConnection({
+var config = {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
     timeout: 60000
-});
+};
+var con = mysql.createConnection(config);
 
 con.connect(function (err) {
     if (err) throw err;
     console.log("Database Connected!")
-    console.log(process.env.CLEAR_LOGIN);
-    console.log(process.env.CLEAR_IMAGE);
+    console.log("Clear Login: " + process.env.CLEAR_LOGIN);
+    console.log("Clear Image: " + process.env.CLEAR_IMAGE);
     if(process.env.CLEAR_LOGIN === "true")
     {
         deleteTable(loginTable);
@@ -26,7 +27,37 @@ con.connect(function (err) {
     checkIfTableExists(loginTable);
     checkIfTableExists(imageTable);
 });
+// handles the first time the connection is lost
+con.on('error', function(err) {
+    console.log('db error', err);
+    if(err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
+        handleDisconnect();                         // lost due to either server restart, or a
+    } else {                                      // connnection idle timeout (the wait_timeout
+        throw err;                                  // server variable configures this)
+    }
+});
 
+function handleDisconnect() {
+    console.log("Attempting to reconnect...");
+    con = mysql.createConnection(config); // Recreate the connection, since
+                                                    // the old one cannot be reused.
+
+    con.connect(function(err) {              // The server is either down
+        if(err) {                                     // or restarting (takes a while sometimes).
+            console.log('error when connecting to db:', err);
+            setTimeout(handleDisconnect, 2000); // We introduce a delay before attempting to reconnect,
+        }                                     // to avoid a hot loop, and to allow our node script to
+    });                                     // process asynchronous requests in the meantime.
+                                            // If you're also serving http, display a 503 error.
+    con.on('error', function(err) {
+        console.log('db error', err);
+        if(err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
+            handleDisconnect();                         // lost due to either server restart, or a
+        } else {                                      // connnection idle timeout (the wait_timeout
+            throw err;                                  // server variable configures this)
+        }
+    });
+}
 
 function checkIfTableExists(name)
 {

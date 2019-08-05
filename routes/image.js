@@ -37,7 +37,6 @@ router.post('/echo', upload.single("image"), function(req, res, next){
     datauri.format('.png', req.file.buffer);
     database.addToImageTable(datauri.content);
     database.getAllImages(function(blobs) {
-        console.log("Number of blobs: " + blobs[0]["file"]);
         res.render('image', {requestFile:false, blobs:blobs});
         res.end();
     })
