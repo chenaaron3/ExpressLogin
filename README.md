@@ -18,8 +18,10 @@ Setting up Database on Heroku:
     - Match CLEARDB_DATABASE_URL into mysql://user:pass@dbhost/dbname?reconnect=true
     - Enter the user, pass, dbhost, dbname as config variables
 
-Setting up Github:
-- Use ssh remote 
+Setting up Github Remote:
+- Use ssh link
+- Make sure .idea file is not tracked
+    - (git rm -cached -r .idea)
     
 Setting up Heroku Remote:  
 - Generate SSH key 
