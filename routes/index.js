@@ -1,3 +1,5 @@
+console.log("Start of index.js");
+
 var express = require('express');
 var router = express.Router();
 var database = require("../public/javascripts/database");
@@ -19,3 +21,5 @@ router.post("/", function(req, res, next)
 });
 
 module.exports = router;
+
+console.log("End of index.js");

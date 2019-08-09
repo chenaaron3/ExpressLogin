@@ -1,8 +1,53 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-family: "sans-serif";
+  color:darkslategrey;
+  background-color: black;
+  text-align: center;
 }
 
-a {
-  color: #00B7FF;
+.box{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  font-size: 30px;
+  background-color: floralwhite;
+  border-radius: 5px;
+}
+
+table{
+  width:100%;
+}
+
+input
+{
+  margin: 10px;
+}
+
+input[type="text"], input[type="password"]{
+  text-align: center;
+  width: 180px;
+  height: 30px;
+  border-radius: 15px;
+  padding-left: 5px;
+  border-color: deepskyblue;
+  background-color: whitesmoke;
+}
+
+input[type="text"]:focus, input[type="password"]:focus,
+input[type="text"]:hover, input[type="password"]:hover{
+  text-align: center;
+  width: 75%;
+  border-color: darkred;
+}
+
+input[type="submit"]{
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: mediumslateblue;
+  color: white;
 }
