@@ -1,3 +1,5 @@
+console.log("Start of database.js");
+
 var mysql = require("mysql");
 const loginTable = "login";
 const imageTable = "image";
@@ -156,3 +158,5 @@ module.exports = {addToLoginTable : addToLoginTable,
     getAllLogin : getAllLogin,
     addToImageTable : addToImageTable,
     getAllImages : getAllImages};
+
+console.log("End of databse.js");

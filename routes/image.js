@@ -1,3 +1,5 @@
+console.log("Start of image.js");
+
 var express = require('express');
 var router = express.Router();
 var multer = require('multer');
@@ -15,7 +17,6 @@ var diskStorage = multer.diskStorage({
     }});
 
 var memoryStorage = multer.memoryStorage();
-
 var upload = multer({storage:memoryStorage});
 
 // route address is in addition to routed folder
@@ -56,9 +57,6 @@ router.post('/echo', upload.single("image"), function(req, res, next){
     // res.end();
 });
 
-function readTextFile(path)
-{
-
-}
-
 module.exports = router;
+
+console.log("End of image.js");
