@@ -5,6 +5,7 @@ var router = express.Router();
 var database = require("../public/javascripts/database");
 
 /* GET home page. */
+// / is the endpoint
 router.get('/', function(req, res, next) {
   res.render('index');
   res.end();
