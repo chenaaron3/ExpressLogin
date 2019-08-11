@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <!--paths relative to route that renders it-->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <!--    <script src="https://kit.fontawesome.com/2e21186dac.js"></script>-->
+    <!--my own functions-->
+    <script src="/javascripts/navigation.js"></script>
+    <!--adding a favicon-->
+    <link rel='icon' href='/images/favicon.ico' type='image/x-icon/'>
+</head>
+<body>
+<nav>
+    <img class="home" src="/images/LightLogo.png" alt="logo" onclick="changePath('/');">
+    <button id="sign-in" onclick="">Sign in</button>
+    <button id="register" onclick="">Register</button>
+</nav>
+<span class="center-box">
+      <h1>Join Us!</h1>
+      <form action="/" method="post">
+        <p><input type="text" name="name" placeholder="Name" autocomplete="off"></p>
+        <p><input type="text" name="email" placeholder="Email" autocomplete="off"></p>
+        <p><input type="text" name="username" placeholder="Username" autocomplete="off"></p>
+        <p><input type="password" name="password" placeholder="Password"></p>
+        <p><input type="submit" name="submit" value="Sign in"></p>
+      </form>
+    </span>
+</body>
+</html>

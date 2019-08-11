@@ -8,7 +8,7 @@ var logger = require('morgan');
 require('dotenv').config();
 
 var indexRouter = require('./routes/index');
-var imageRouter = require('./routes/image');
+var imageRouter = require('./routes/image/image');
 
 var app = express();
 
@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/images', imageRouter);
+app.use('/image', imageRouter);
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler

@@ -1,6 +1,6 @@
-function goHome()
+function changePath(path)
 {
-    console.log("Going Home");
+    console.log("Going to " + path);
     // opens in respect to base url
-    window.open("/", "_self");
+    window.location.href = path;
 }

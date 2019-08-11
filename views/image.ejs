@@ -2,18 +2,26 @@
 <html>
     <head>
         <title>Image!</title>
-        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+        <script src="/javascripts/navigation.js"></script>
+        <link rel='icon' href='/images/favicon.ico' type='image/x-icon/' >
     </head>
     <body>
+        <nav>
+            <img class="home" src="/images/LightLogo.png" alt="logo" onclick="changePath('/');">
+            <button id="sign-in" onclick="">Sign in</button>
+            <button id="register" onclick="">Register</button>
+        </nav>
+        <img class="home" src="/images/LightLogo.png" alt="logo" onclick="changePath('/');">
         <%if(requestFile){%>
-        <form method="post" enctype="multipart/form-data" action="./echo">
-            <input type="file" accept="image/*" name="image">
-            <input type="submit">
-        </form>
+            <form method="post" enctype="multipart/form-data" action="./echo">
+                <input type="file" accept="image/*" name="image">
+                <input type="submit">
+            </form>
         <%}%>
         <br>
         <%for(var j = 0; j < blobs.length; j++){%>
-        <img src="<%= blobs[j]["file"]%>" name="image">
+            <img src="<%= blobs[j]["file"]%>" name="image">
         <%}%>
     </body>
 </html>

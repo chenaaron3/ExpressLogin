@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 var multer = require('multer');
 var path = require("path")
-var database = require("../public/javascripts/database");
+var database = require("../../public/javascripts/database");
 
 // only works with localhost
 var diskStorage = multer.diskStorage({
@@ -20,7 +20,7 @@ var memoryStorage = multer.memoryStorage();
 var upload = multer({storage:memoryStorage});
 
 // route address is in addition to routed folder
-// /imageUpload/xd
+// /category/action
 router.get('/request', function(req, res, next) {
     console.log(("Image Upload"));
     res.render('image', {requestFile:true, blobs:[]});

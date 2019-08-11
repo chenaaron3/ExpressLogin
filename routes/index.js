@@ -21,6 +21,12 @@ router.post("/", function(req, res, next)
   });
 });
 
+router.get("/register", function(req, res, next)
+{
+  res.render("register");
+  res.end();
+});
+
 module.exports = router;
 
 console.log("End of index.js");

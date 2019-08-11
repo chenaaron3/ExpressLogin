@@ -1,5 +1,4 @@
 # ExpressLogin  
-
 Setting up Database on localhost:
 - Download XAMPP
 - Open the XAMPP Control Panel
@@ -33,5 +32,7 @@ Setting up Heroku Remote:
 - Change default from HTTP to SSH 
     - (git config --global url.ssh://git@heroku.com/.insteadOf https://git.heroku.com/)
 
+Notes:
+- paths in ejs file are relative to the endpoint that renders it
     
     

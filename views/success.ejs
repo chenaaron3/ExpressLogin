@@ -2,13 +2,13 @@
 <html>
     <head>
         <title>Success!</title>
-        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     </head>
     <body>
-        Hello there <%=name%>!!! <br>
-        You logged in with username: <%=username%> and password: <%=password%> <br>
+        <p>Hello there <%=name%>!!!</p>
+        <p>You logged in with username: <%=username%> and password: <%=password%></p>
         <% for( var i = 0; i < record.length; i++){ %>
-            Index: <%= i %> Name: <%= record[i].name %> Username: <%= record[i].username %> Password: <%= record[i].password %> <br>
+            <p>Index: <%= i %> Name: <%= record[i].name %> Username: <%= record[i].username %> Password: <%= record[i].password %> </p>
         <% }%>
     </body>
 </html>

@@ -2,28 +2,31 @@
 <html>
   <head>
     <title>Login</title>
-                                          <!--href relative to public folder-->
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <!--paths relative to route that renders it-->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <!--adding dependency for fontawesome icons-->
+<!--    <script src="https://kit.fontawesome.com/2e21186dac.js"></script>-->
+    <!--my own functions-->
+    <script src="/javascripts/navigation.js"></script>
+    <!--adding a favicon-->
+    <link rel='icon' href='/images/favicon.ico' type='image/x-icon/' >
   </head>
   <body>
-    <img src="images/Logo.png" alt="logo" onclick="goHome();">
-    <div class="box">
-      <h1>Welcome!</h1>
-      <form action="/" method="post">
-        <table>
-          <tr>
-            <td> <input type="text" name="name" placeholder="Name" autocomplete="off"> </td>
-          </tr>
-          <tr>
-            <td> <input type="text" name="username" placeholder="Username" autocomplete="off"> </td>
-          </tr>
-          <tr>
-            <td> <input type="password" name="password" placeholder="Password"> </td>
-          </tr>
-        </table>
-        <input type="submit" name="submit" value="Sign in">
-      </form>
-    </div>
-    <script src="javascripts/navigation.js"></script>
+    <nav>
+      <img class="home" src="/images/LightLogo.png" alt="logo" onclick="changePath('/');">
+      <button id="sign-in" onclick="changePath('/');">Sign in</button>
+      <button id="register" onclick="changePath('/register');">Register</button>
+    </nav>
+    <span class="center-box">
+      <h1>Welcome to ACHEN To-Do Lists!</h1>
+      <h3 style="margin-top: 50px">Where you can:</h3>
+      <ol>
+        <li>Create an activity</li>
+        <li>Read an activity</li>
+        <li>Update an activity</li>
+        <li>Delete an activity</li>
+      </ol>
+      <button class="CTA">Get Started</button>
+    </span>
   </body>
 </html>
