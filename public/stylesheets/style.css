@@ -10,7 +10,7 @@ selector {
 
 * {
     /*use outline to visualize and border to affect size*/
-    outline: solid thin red;
+    /*outline: solid thin red;*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
