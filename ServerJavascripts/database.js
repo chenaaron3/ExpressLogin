@@ -98,17 +98,18 @@ function deleteTable(name)
 // LOGIN TABLE
 function createLoginTable()
 {
-    var sql = `CREATE TABLE ${loginTable}(id int AUTO_INCREMENT, name varchar(30) NOT NULL, username varchar(30) NOT NULL, 
-                password varchar(30) NOT NULL, PRIMARY KEY(id))`;
+    var sql = `CREATE TABLE ${loginTable}(id int AUTO_INCREMENT, name varchar(30) NOT NULL, email varchar(30) NOT NULL,
+                username varchar(30) NOT NULL, password varchar(30) NOT NULL, PRIMARY KEY(id))`;
     con.query(sql, function (err, result) {
         if (err) throw err;
         console.log("Created Login Table!");
     });
 }
 
-function addToLoginTable(name, username, password)
+function addToLoginTable(name, email, username, password)
 {
-    var sql = `INSERT INTO ${loginTable}(name, username, password) VALUES("${name}" ,"${username}" ,"${password}")`;
+    var sql = `INSERT INTO ${loginTable}(name, email, username, password) VALUES("${name}", "${email}" 
+            ,"${username}" ,"${password}")`;
     con.query(sql, function (err, result) {
         if (err) throw err;
         console.log("Inserted: " + sql);
@@ -117,7 +118,7 @@ function addToLoginTable(name, username, password)
 
 function getAllLogin(callback)
 {
-    con.query(`SELECT DISTINCT name, username, password FROM ${loginTable}`, function (err, result, fields) {
+    con.query(`SELECT DISTINCT id, name, email, username, password FROM ${loginTable}`, function (err, result, fields) {
         if (err) throw err;
         console.log("Login Results: " + result);
         callback(result);

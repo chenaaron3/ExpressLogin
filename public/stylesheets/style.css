@@ -14,6 +14,14 @@ selector {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: auto;
+}
+
+.center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
 }
 
 body {
@@ -22,37 +30,78 @@ body {
     font-family: "sans-serif";
 }
 
+/*======= NAV BAR =======*/
 nav {
     position: absolute;
-    height: 10%;
+    height: 5%;
     width: 100%;
-    background-color: black;
+    background-color: #2d3436;
+}
+
+.home {
+    height: 100%;
+    cursor: pointer;
+}
+
+.nav-buttons {
+    position: absolute;
+    right: 0%;
+    height: 100%;
+    text-align: center;
 }
 
 nav button {
-    position: relative;
-    float: right;
-    margin: 10px;
-    height: 30px;
+    height: 100%;
     width: 100px;
-    background-color: mediumseagreen;
-    color: white;
+    margin-right: 10px;
+    background-image: linear-gradient(to left, #00b894, #55efc4, #00b894);
     border-radius: 5px;
 }
 
-nav button:hover {
-    background-color: #55efc4;
-    color: black;
+#menu {
+    display: inline-block;
+    float: right;
+    height: 400%;
 }
 
-nav .home {
-    height: 100%;
+#menu.close #menu-list {
+    top: -100%;
 }
 
-.center-box {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#menu.open #menu-list {
+    top: 0;
+}
+
+#menu-icon {
+    position: relative;
+    height: 25%;
+    z-index: 1;
+}
+
+#menu-list {
+    position: relative;
+    height: 75%;
+    margin-right: 10px;
+    list-style-type: none;
+    transition: .5s;
+    text-align: left;
+}
+
+#menu-list li {
+    height: 33%;
+    border: solid thin black;
+    background-color: #b2bec3;
+}
+
+#menu-list span {
+    position: relative;
+}
+
+#menu-list li:hover {
+    background-color: #dfe6e9;
+}
+
+.panel {
     position: absolute;
     padding: 10px;
     background-color: #ecf0f1;
@@ -62,11 +111,11 @@ nav .home {
     font-size: 30px;
 }
 
-.center-box input {
+.panel input {
     margin: 10px;
 }
 
-.center-box ol {
+#welcome ol {
     position: relative;
     left: 50%;
     transform: translate(-25%, 0%);
@@ -74,26 +123,29 @@ nav .home {
     list-style-type: upper-roman;
 }
 
-.center-box li {
+#welcome li {
     text-align: left;
 }
 
-.center-box .CTA {
+.CTA {
     width: 250px;
-    height: 50px;
+    height: 75px;
     margin-top: 50px;
     padding: 10px;
     border-radius: 10px;
-    background-color: mediumseagreen;
-    color: white;
     font-size: 30px;
     font-weight: bold;
     font-family: "sans-serif";
+    background-image: linear-gradient(to left, #00cec9, #81ecec, #00cec9);
 }
 
-.center-box .CTA:hover {
-    background-color: #55efc4;
-    color: black;
+.gradient-btn {
+    background-size: 200%;
+    transition: .5s;
+}
+
+.gradient-btn:hover {
+    background-position: right;
 }
 
 input[type="text"], input[type="password"] {

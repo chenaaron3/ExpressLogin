@@ -5,7 +5,9 @@
     <!--paths relative to route that renders it-->
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     <!--adding dependency for fontawesome icons-->
-<!--    <script src="https://kit.fontawesome.com/2e21186dac.js"></script>-->
+    <script src="https://kit.fontawesome.com/2e21186dac.js"></script>
+    <!--adding jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--my own functions-->
     <script src="/javascripts/navigation.js"></script>
     <!--adding a favicon-->
@@ -14,10 +16,23 @@
   <body>
     <nav>
       <img class="home" src="/images/LightLogo.png" alt="logo" onclick="changePath('/');">
-      <button id="sign-in" onclick="changePath('/');">Sign in</button>
-      <button id="register" onclick="changePath('/register');">Register</button>
+      <span class="nav-buttons">
+        <% if(username == undefined){ %>
+          <button id="sign-in" class="gradient-btn" onclick="changePath('/');">Sign in</button>
+          <button id="register" class="gradient-btn" onclick="changePath('/register');">Register</button>
+        <%} else{ %>
+        <div id="menu" class="close">
+          <button id="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+          <ul id="menu-list">
+            <li href="/register"><span class="center">Profile</span></li>
+            <li href="/"><span class="center">MyList</span></li>
+            <li href="/"><span class="center">Sign out</span></li>
+          </ul>
+        </div>
+      </span>
+      <% } %>
     </nav>
-    <span class="center-box">
+    <span id="welcome" class="panel center">
       <h1>Welcome to ACHEN To-Do Lists!</h1>
       <h3 style="margin-top: 50px">Where you can:</h3>
       <ol>
@@ -26,7 +41,9 @@
         <li>Update an activity</li>
         <li>Delete an activity</li>
       </ol>
-      <button class="CTA">Get Started</button>
+      <button class="CTA gradient-btn" onclick="changePath('/register');">
+        Get Started  <i class="fas fa-sign-in-alt"></i>
+      </button>
     </span>
   </body>
 </html>

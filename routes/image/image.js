@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 var multer = require('multer');
 var path = require("path")
-var database = require("../../public/javascripts/database");
+var database = require("../../ServerJavascripts/database");
 
 // only works with localhost
 var diskStorage = multer.diskStorage({

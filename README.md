@@ -33,6 +33,13 @@ Setting up Heroku Remote:
     - (git config --global url.ssh://git@heroku.com/.insteadOf https://git.heroku.com/)
 
 Notes:
+- HTML: provides page content
+- CSS: formats page content
+- Javascript: power express app and route urls to pages
+    - jQuery: used in js to move components
+    - ajax: used in js for front end to call backend functions and handle response
 - paths in ejs file are relative to the endpoint that renders it
-    
+- cookies store information in current session
+- res.cookie(key, value) to save cookie
+- req.cookies[key] to get cookie
     
