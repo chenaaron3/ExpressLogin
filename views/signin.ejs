@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Register</title>
+    <title>Sign in</title>
     <!--paths relative to route that renders it-->
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     <script src="https://kit.fontawesome.com/2e21186dac.js"></script>
@@ -17,16 +17,14 @@
     <img class="home" src="/images/LightLogo.png" alt="logo" onclick="changePath('/');">
 </nav>
 <span class="panel center">
-      <h6 class="error"><%= message %></h6>
-      <h1>Create an Account!</h1>
-      <form action="/register" method="post">
-        <p><input type="text" name="name" placeholder="Name" autocomplete="off" class="expand loginInput"></p>
-        <p><input type="text" name="email" placeholder="Email" autocomplete="off" class="expand loginInput"></p>
+      <h6 class="error"><%=message%></h6>
+      <h1>Welcome Back!</h1>
+      <form action="/signin" method="post">
         <p><input type="text" name="username" placeholder="Username" autocomplete="off" class="expand loginInput"></p>
         <p><input type="password" name="password" placeholder="Password" class="expand loginInput"></p>
-        <p><input type="submit" name="submit" value="Register" class="expand"></p>
+        <p><input type="submit" name="submit" value="Sign in" class="expand"></p>
       </form>
-      <h6 style="font-size: .5em">Already have an account?<br><a href="/signin">Sign in</a></h6>
+      <h6 style="font-size: .5em">Don't have an account?<br><a href="/register">Register</a></h6>
     </span>
 </body>
 </html>

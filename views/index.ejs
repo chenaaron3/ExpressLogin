@@ -18,19 +18,19 @@
       <img class="home" src="/images/LightLogo.png" alt="logo" onclick="changePath('/');">
       <span class="nav-buttons">
         <% if(username == undefined){ %>
-          <button id="sign-in" class="gradient-btn" onclick="changePath('/');">Sign in</button>
+          <button id="sign-in" class="gradient-btn" onclick="changePath('/signin');">Sign in</button>
           <button id="register" class="gradient-btn" onclick="changePath('/register');">Register</button>
         <%} else{ %>
-        <div id="menu" class="close">
-          <button id="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
-          <ul id="menu-list">
-            <li href="/register"><span class="center">Profile</span></li>
-            <li href="/"><span class="center">MyList</span></li>
-            <li href="/"><span class="center">Sign out</span></li>
-          </ul>
-        </div>
+          <div id="menu" class="close">
+            <button id="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+            <ul id="menu-list">
+              <li href="/profile"><span class="center">Profile</span></li>
+              <li href="/mylist"><span class="center">MyList</span></li>
+              <li href="/signout"><span class="center">Sign out</span></li>
+            </ul>
+          </div>
+        <% } %>
       </span>
-      <% } %>
     </nav>
     <span id="welcome" class="panel center">
       <h1>Welcome to ACHEN To-Do Lists!</h1>

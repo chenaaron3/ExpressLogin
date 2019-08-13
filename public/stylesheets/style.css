@@ -25,9 +25,13 @@ selector {
 }
 
 body {
-    color: darkslategrey;
+    width: 100vw;
+    height: 100vh;
     font-size: 14px;
     font-family: "sans-serif";
+    background-image: linear-gradient(120deg, #55efc4, #6c5ce7);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /*======= NAV BAR =======*/
@@ -58,6 +62,7 @@ nav button {
     border-radius: 5px;
 }
 
+/*======= MENU =======*/
 #menu {
     display: inline-block;
     float: right;
@@ -93,26 +98,42 @@ nav button {
     background-color: #b2bec3;
 }
 
-#menu-list span {
-    position: relative;
-}
-
 #menu-list li:hover {
     background-color: #dfe6e9;
 }
 
+#menu-list span {
+    position: relative;
+}
+
+/*======= CONTAINERS =======*/
 .panel {
     position: absolute;
-    padding: 10px;
+    padding: 50px;
+    max-height: 85vh;
     background-color: #ecf0f1;
     border: medium solid black;
-    border-radius: 5px;
+    border-radius: 15px;
     text-align: center;
     font-size: 30px;
+    overflow: auto;
+}
+
+.panel *{
+    margin: 10px;
+}
+
+.panel table td{
+    padding: 10px;
+    text-align: left;
 }
 
 .panel input {
     margin: 10px;
+}
+
+.panel a{
+    cursor: pointer;
 }
 
 #welcome ol {
@@ -124,6 +145,7 @@ nav button {
 }
 
 #welcome li {
+    padding: 10px;
     text-align: left;
 }
 
@@ -139,6 +161,10 @@ nav button {
     background-image: linear-gradient(to left, #00cec9, #81ecec, #00cec9);
 }
 
+.error{
+    color: red;
+}
+
 .gradient-btn {
     background-size: 200%;
     transition: .5s;
@@ -148,9 +174,13 @@ nav button {
     background-position: right;
 }
 
-input[type="text"], input[type="password"] {
-    width: 100px;
-    height: 30px;
+.expand:focus, .expand:hover {
+    width: 50%;
+}
+
+.loginInput {
+    width: 150px;
+    height: 50px;
     padding-left: 5px;
     border-radius: 15px;
     border-color: deepskyblue;
@@ -158,21 +188,54 @@ input[type="text"], input[type="password"] {
     text-align: center;
 }
 
-input[type="text"]:focus, input[type="password"]:focus,
-input[type="text"]:hover, input[type="password"]:hover {
+form input[type="submit"] {
     width: 150px;
-    border-color: darkred;
+    height: 30px;
+    border-radius: 15px;
+    color: white;
+    background-color: mediumslateblue;
     text-align: center;
 }
 
-input[type="submit"] {
-    width: 100px;
-    height: 30px;
-    border-radius: 15px;
-    background-color: mediumslateblue;
-    color: white;
+.todo{
+    width: 50%;
 }
 
-input[type="submit"]:hover {
-    width: 150px;
+.todo h3{
+    text-align: left;
+}
+
+.todo input[type="text"]{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #000;
+    background: none;
+    padding: 10px;
+    outline: none;
+    font-size: 18px;
+}
+
+.todo ul{
+    list-style-type: none;
+}
+
+.todo li{
+    padding: 10px;
+    text-align: left;
+}
+
+.todo i{
+    float: right;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.notComplete li{
+    background-color: #dfe6e9;
+    color: #636e72;
+}
+
+.complete li{
+    background-color: #636e72;
+    color: #dfe6e9;
 }

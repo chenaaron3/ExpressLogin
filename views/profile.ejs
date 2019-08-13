@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign in</title>
+    <!--paths relative to route that renders it-->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/2e21186dac.js"></script>
+    <!--adding jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--my own functions-->
+    <script src="/javascripts/navigation.js"></script>
+    <!--adding a favicon-->
+    <link rel='icon' href='/images/favicon.ico' type='image/x-icon/'>
+</head>
+<body>
+<nav>
+    <img class="home" src="/images/LightLogo.png" alt="logo" onclick="changePath('/');">
+    <span class="nav-buttons">
+        <div id="menu" class="close">
+            <button id="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+            <ul id="menu-list">
+              <li href="/profile"><span class="center">Profile</span></li>
+              <li href="/mylist"><span class="center">MyList</span></li>
+              <li href="/signout"><span class="center">Sign out</span></li>
+            </ul>
+        </div>
+    </span>
+</nav>
+<span class="panel center">
+    <h1>Profile</h1>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><%=name%></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><%=email%></td>
+        </tr>
+        <tr>
+            <td>Username:</td>
+            <td><%=username%></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><%=password%></td>
+        </tr>
+    </table>
+</span>
+</body>
+</html>

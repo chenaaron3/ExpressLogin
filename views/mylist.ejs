@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign in</title>
+    <!--paths relative to route that renders it-->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/2e21186dac.js"></script>
+    <!--adding jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--my own functions-->
+    <script src="/javascripts/navigation.js"></script>
+    <!--adding a favicon-->
+    <link rel='icon' href='/images/favicon.ico' type='image/x-icon/'>
+</head>
+<body>
+<nav>
+    <img class="home" src="/images/LightLogo.png" alt="logo" onclick="changePath('/');">
+    <span class="nav-buttons">
+        <div id="menu" class="close">
+            <button id="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+            <ul id="menu-list">
+              <li href="/profile"><span class="center">Profile</span></li>
+              <li href="/mylist"><span class="center">MyList</span></li>
+              <li href="/signout"><span class="center">Sign out</span></li>
+            </ul>
+        </div>
+    </span>
+</nav>
+<div class="panel center todo">
+    <h1>My List</h1>
+<!--Page Refreshes every time a new entry is entered-->
+    <form action="/createActivity" method="post">
+        <input type="text" placeholder="Add Activity" name="activity">
+    </form>
+    <h3>Not Completed</h3>
+    <ul class="notComplete">
+        <% for(let i = 0; i < todoList.length; i++){ %>
+            <li class="activity">
+                <span><%=todoList[i].activity%></span>
+                <i class="fas fa-trash"></i>
+                <i class="fas fa-check"></i>
+            </li>
+        <% } %>
+    </ul>
+    <h3>Completed</h3>
+    <ul class="complete">
+        <% for(let i = 0; i < completeList.length; i++){ %>
+            <li class="activity">
+                <span><%=completeList[i].activity%></span>
+                <i class="fas fa-trash"></i>
+            </li>
+        <% } %>
+    </ul>
+</div>
+</body>
+</html>
