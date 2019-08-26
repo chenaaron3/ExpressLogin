@@ -61,6 +61,7 @@ router.get("/signin", function (req, res, next) {
 });
 
 router.post("/signin", function (req, res, next) {
+    console.log("SIGN IN!");
     database.checkUsernameExists(req.body.username, function (exist) {
         console.log("Sign in user valid: " + exist);
         // if username is valid

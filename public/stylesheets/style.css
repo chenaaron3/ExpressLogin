@@ -102,8 +102,12 @@ nav button {
     background-color: #dfe6e9;
 }
 
-#menu-list span {
-    position: relative;
+#menu-list a {
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*======= CONTAINERS =======*/
