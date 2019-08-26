@@ -3,6 +3,7 @@ console.log("Start of index.js");
 var express = require('express');
 var router = express.Router();
 var database = require("../ServerJavascripts/database");
+const sgMail = require('@sendgrid/mail');
 
 /* GET home page. */
 // / is the endpoint
@@ -180,6 +181,17 @@ router.delete("/deleteComplete", function(req, res, next){
 router.get("/signout", function (req, res, next){
     res.cookie("username", "", {maxAge: -1000});
     res.redirect("/");
+});
+
+router.get("/email", function(req, res, next){
+    sgMail.setApiKey(process.env.SENDGRID_KEY);
+    const msg = {
+        to: 'aaroc11@uci.edu',
+        from: 'apkirito1@gmail.com',
+        subject: 'Hello from Todo',
+        text: "hehexd"
+    };
+    sgMail.send(msg);
 });
 
 module.exports = router;
