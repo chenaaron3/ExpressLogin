@@ -149,8 +149,9 @@ router.get("/mylist", function(req, res, next){
 
 router.post("/createActivity", function (req, res, next) {
     let username = req.cookies["username"];
+    // adds to incomplete table
     database.addToActivityTable(false, username, req.body.activity, function () {
-        res.redirect("/mylist");
+        res.send(`Created activity ${req.body.activity} for ${username}`);
     });
 });
 
