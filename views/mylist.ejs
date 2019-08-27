@@ -11,41 +11,51 @@
     <link rel='icon' href='/images/favicon.ico' type='image/x-icon/'>
 </head>
 <body>
-<nav>
-    <img class="home" src="/images/LightLogo.png" alt="logo" onclick="changePath('/');">
-    <span class="nav-buttons">
-        <div id="menu" class="close">
-            <button id="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
-            <ul id="menu-list">
-              <li><a href="/profile">Profile</a></li>
-              <li><a href="/mylist">MyList</a></li>
-              <li><a href="/signout">Sign out</a></li>
+<main data-router-wrapper>
+    <div data-router-view="quarter">
+        <div class="transitionTL"></div>
+        <div class="transitionTR"></div>
+        <div class="transitionBL"></div>
+        <div class="transitionBR"></div>
+        <nav>
+            <a href="/">
+                <img class="home" src="/images/LightLogo.png" alt="logo">
+            </a>
+            <span class="nav-buttons">
+                <div id="menu" class="close">
+                    <button id="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+                    <ul id="menu-list">
+                      <li><a href="/profile">Profile</a></li>
+                      <li><a href="/mylist">MyList</a></li>
+                      <li><a href="/signout">Sign out</a></li>
+                    </ul>
+                </div>
+            </span>
+        </nav>
+        <div class="panel center todo">
+            <h1>My List</h1>
+            <input type="text" placeholder="Add Activity" class="todoInput">
+            <h3>Not Completed</h3>
+            <ul class="notComplete">
+                <% for(let i = 0; i < todoList.length; i++){ %>
+                    <li class="activity">
+                        <span><%= todoList[i].activity %></span>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-check"></i>
+                    </li>
+                <% } %>
+            </ul>
+            <h3>Completed</h3>
+            <ul class="complete">
+                <% for(let i = 0; i < completeList.length; i++){ %>
+                    <li class="activity">
+                        <span><%= completeList[i].activity %></span>
+                        <i class="fas fa-trash"></i>
+                    </li>
+                <% } %>
             </ul>
         </div>
-    </span>
-</nav>
-<div class="panel center todo">
-    <h1>My List</h1>
-    <input type="text" placeholder="Add Activity" class="todoInput">
-    <h3>Not Completed</h3>
-    <ul class="notComplete">
-        <% for(let i = 0; i < todoList.length; i++){ %>
-            <li class="activity">
-                <span><%=todoList[i].activity%></span>
-                <i class="fas fa-trash"></i>
-                <i class="fas fa-check"></i>
-            </li>
-        <% } %>
-    </ul>
-    <h3>Completed</h3>
-    <ul class="complete">
-        <% for(let i = 0; i < completeList.length; i++){ %>
-            <li class="activity">
-                <span><%=completeList[i].activity%></span>
-                <i class="fas fa-trash"></i>
-            </li>
-        <% } %>
-    </ul>
-</div>
+    </div>
+</main>
 </body>
 </html>

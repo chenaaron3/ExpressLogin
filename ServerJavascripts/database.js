@@ -180,7 +180,7 @@ function removeFromActivityTable(complete, username, activity, callback) {
     var sql = `DELETE FROM ${table} WHERE username = "${username}" AND activity = "${activity}"`;
     con.query(sql, function (err, result, fields) {
         if (err) throw err;
-        console.log(`Inserted activity into ${table}!`);
+        console.log(`Deleted ${activity} from ${table}!`);
         callback();
     });
 }

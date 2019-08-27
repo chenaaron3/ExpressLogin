@@ -1,7 +1,5 @@
 // generates html for todo activity
 import $ from "jquery";
-import Highway from '@dogstudio/highway';
-import {TimelineMax} from "gsap"
 
 function generateTodoHTML(activity)
 {
@@ -23,19 +21,19 @@ function generateCompleteHTML(activity)
     </li>`;
 }
 
-$(document).ready(() => {
+function onPageLoad() {
+    console.log("Document ready from main.");
     let $todoList = $(".notComplete");
     let $completeList = $(".complete");
 
-    $("#menu-list li").on("click", function() {
-        changePath($(this).attr("href"));
-    });
+    console.log($todoList);
 
     // when enter something in the todo input
     $(".todoInput").on("keydown", function search(e) {
         if(e.key === "Enter") {
             let $input = $(this);
             let activity = $input.val();
+            // make a request to create activity
             $.ajax({
                 url: `/createActivity`,
                 type: "Post",
@@ -43,6 +41,7 @@ $(document).ready(() => {
                     activity: activity,
                 },
                 success: function(result){
+                    // clears the input text and adds a todo element
                     console.log(result);
                     $input.val("");
                     $todoList.append(generateTodoHTML(activity));
@@ -62,6 +61,7 @@ $(document).ready(() => {
                 activity: activity
             },
             success: function(result) {
+                // removes the todo element and adds a completed element
                 $parent.remove();
                 $completeList.append(generateCompleteHTML(activity));
                 console.log(result);
@@ -80,6 +80,7 @@ $(document).ready(() => {
                 activity: activity
             },
             success: function(result) {
+                // delete the activity element
                 $parent.remove();
                 console.log(result);
             }
@@ -97,9 +98,12 @@ $(document).ready(() => {
                 activity: activity
             },
             success: function(result) {
+                // delete activity element
                 $parent.remove();
                 console.log(result);
             }
         });
     });
-});
+}
+
+export default onPageLoad;

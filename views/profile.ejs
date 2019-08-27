@@ -11,39 +11,49 @@
     <link rel='icon' href='/images/favicon.ico' type='image/x-icon/'>
 </head>
 <body>
-<nav>
-    <img class="home" src="/images/LightLogo.png" alt="logo" onclick="changePath('/');">
-    <span class="nav-buttons">
-        <div id="menu" class="close">
-            <button id="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
-            <ul id="menu-list">
-              <li><a href="/profile">Profile</a></li>
-              <li><a href="/mylist">MyList</a></li>
-              <li><a href="/signout">Sign out</a></li>
-            </ul>
-        </div>
-    </span>
-</nav>
-<span class="panel center">
-    <h1>Profile</h1>
-    <table>
-        <tr>
-            <td>Name:</td>
-            <td><%=name%></td>
-        </tr>
-        <tr>
-            <td>Email:</td>
-            <td><%=email%></td>
-        </tr>
-        <tr>
-            <td>Username:</td>
-            <td><%=username%></td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td><%=password%></td>
-        </tr>
-    </table>
-</span>
+<main data-router-wrapper>
+    <div data-router-view="quarter">
+        <div class="transitionTL"></div>
+        <div class="transitionTR"></div>
+        <div class="transitionBL"></div>
+        <div class="transitionBR"></div>
+        <nav>
+            <a href="/">
+                <img class="home" src="/images/LightLogo.png" alt="logo">
+            </a>
+            <span class="nav-buttons">
+                <div id="menu" class="close">
+                    <button id="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+                    <ul id="menu-list">
+                      <li><a href="/profile">Profile</a></li>
+                      <li><a href="/mylist">MyList</a></li>
+                      <li><a href="/signout">Sign out</a></li>
+                    </ul>
+                </div>
+            </span>
+        </nav>
+        <span class="panel center">
+            <h1>Profile</h1>
+            <table>
+            <tr>
+                <td>Name:</td>
+                <td><%= name %></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><%= email %></td>
+            </tr>
+            <tr>
+                <td>Username:</td>
+                <td><%= username %></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><%= password %></td>
+            </tr>
+            </table>
+        </span>
+    </div>
+</main>
 </body>
 </html>

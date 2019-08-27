@@ -132,6 +132,7 @@ router.get("/profile", function(req, res, next){
 });
 
 router.get("/mylist", function(req, res, next){
+    console.log("MY LIST!!");
     let username = req.cookies["username"];
     if(username != undefined)
     {

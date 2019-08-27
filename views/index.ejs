@@ -1,48 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Login</title>
     <!--paths relative to route that renders it-->
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     <!--adding dependency for fontawesome icons-->
     <script src="https://kit.fontawesome.com/2e21186dac.js"></script>
     <!--adding a favicon-->
-    <link rel='icon' href='/images/favicon.ico' type='image/x-icon/' >
-  </head>
-  <body>
-    <nav>
-      <img class="home" src="/images/LightLogo.png" alt="logo" onclick="changePath('/');">
-      <span class="nav-buttons">
-        <% if(username == undefined){ %>
-          <button id="sign-in" class="gradient-btn" onclick="changePath('/signin');">Sign in</button>
-          <button id="register" class="gradient-btn" onclick="changePath('/register');">Register</button>
-        <%} else{ %>
-          <div id="menu" class="close">
-            <button id="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
-            <ul id="menu-list">
-              <li><a href="/profile">Profile</a></li>
-              <li><a href="/mylist">MyList</a></li>
-              <li><a href="/signout">Sign out</a></li>
-            </ul>
-          </div>
-        <% } %>
-      </span>
-    </nav>
-    <span id="welcome" class="panel center">
-      <h1>Welcome to ACHEN To-Do Lists!</h1>
-      <h3 style="margin-top: 50px">Where you can:</h3>
-      <ol>
-        <li>Create an activity.</li>
-        <li>Read an activity.</li>
-        <li>Update an activity.</li>
-        <li>Delete an activity.</li>
-      </ol>
-      <button class="CTA gradient-btn" onclick="changePath('/register');">
-        Get Started  <i class="fas fa-sign-in-alt"></i>
-      </button>
-    </span>
-    <!--my own functions-->
-    <script src="/dist/bundle.js"></script>
-    <script src="/javascripts/navigation.js"></script>
-  </body>
+    <link rel='icon' href='/images/favicon.ico' type='image/x-icon/'>
+</head>
+<body>
+<main data-router-wrapper>
+    <div data-router-view="quarter">
+        <div class="transitionTL"></div>
+        <div class="transitionTR"></div>
+        <div class="transitionBL"></div>
+        <div class="transitionBR"></div>
+        <nav>
+            <a href="/">
+                <img class="home" src="/images/LightLogo.png" alt="logo">
+            </a>
+            <span class="nav-buttons">
+                <% if(username == undefined){ %>
+                    <a href="/signin">
+                        <button id="sign-in" class="gradient-btn">Sign in</button>
+                    </a>
+                    <a href="/register">
+                        <button id="register" class="gradient-btn">Register</button>
+                    </a>
+                <% } else{ %>
+                    <div id="menu" class="close">
+                        <button id="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+                        <ul id="menu-list">
+                          <li><a href="/profile">Profile</a></li>
+                          <li><a href="/mylist">MyList</a></li>
+                          <li><a href="/signout">Sign out</a></li>
+                        </ul>
+                    </div>
+                <% } %>
+            </span>
+        </nav>
+        <span id="welcome" class="panel center">
+            <h1>Welcome to ACHEN To-Do Lists!</h1>
+            <h3 style="margin-top: 50px">Where you can:</h3>
+            <ol>
+                <li>Create an activity.</li>
+                <li>Read an activity.</li>
+                <li>Update an activity.</li>
+                <li>Delete an activity.</li>
+            </ol>
+            <a href="/register">
+                <button class="CTA gradient-btn">
+                    Get Started  <i class="fas fa-sign-in-alt"></i>
+                </button>
+            </a>
+        </span>
+        <!--my own functions-->
+        <script src="/dist/bundle.js"></script>
+        <script src="/javascripts/navigation.js"></script>
+    </div>
+</main>
+</body>
 </html>

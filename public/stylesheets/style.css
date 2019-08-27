@@ -243,3 +243,18 @@ form input[type="submit"] {
     background-color: #636e72;
     color: #dfe6e9;
 }
+
+.transitionTL, .transitionTR, .transitionBL, .transitionBR {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
+    background-color: black;
+    z-index: 1000;
+    top: -100%;
+}
+
+.transitionTL, .transitionTR, .transitionBL, .transitionBR {
+    background-image: url("/images/transition.jpg");
+}

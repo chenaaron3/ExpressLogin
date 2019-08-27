@@ -11,18 +11,28 @@
     <link rel='icon' href='/images/favicon.ico' type='image/x-icon/'>
 </head>
 <body>
-<nav>
-    <img class="home" src="/images/LightLogo.png" alt="logo" onclick="changePath('/');">
-</nav>
-<span class="panel center">
-      <h6 class="error"><%=message%></h6>
-      <h1>Welcome Back!</h1>
-      <form action="/signin" method="post">
-        <p><input type="text" name="username" placeholder="Username" autocomplete="off" class="expand loginInput"></p>
-        <p><input type="password" name="password" placeholder="Password" class="expand loginInput"></p>
-        <p><input type="submit" name="submit" value="Sign in" class="expand"></p>
-      </form>
-      <h6 style="font-size: .5em">Don't have an account?<br><a href="/register">Register</a></h6>
-    </span>
+<main data-router-wrapper>
+    <div data-router-view="quarter">
+        <div class="transitionTL"></div>
+        <div class="transitionTR"></div>
+        <div class="transitionBL"></div>
+        <div class="transitionBR"></div>
+        <nav>
+            <a href="/">
+                <img class="home" src="/images/LightLogo.png" alt="logo">
+            </a>
+        </nav>
+        <span class="panel center">
+          <h6 class="error"><%=message%></h6>
+          <h1>Welcome Back!</h1>
+          <form action="/signin" method="post">
+            <p><input type="text" name="username" placeholder="Username" autocomplete="off" class="expand loginInput"></p>
+            <p><input type="password" name="password" placeholder="Password" class="expand loginInput"></p>
+            <p><input type="submit" name="submit" value="Sign in" class="expand"></p>
+          </form>
+          <h6 style="font-size: .5em">Don't have an account?<br><a href="/register">Register</a></h6>
+        </span>
+    </div>
+</main>
 </body>
 </html>

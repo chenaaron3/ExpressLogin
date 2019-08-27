@@ -34,10 +34,17 @@ Setting up Heroku Remote:
 
 Notes:
 - HTML: provides page content
+    - EJS: initial html content served to client requests
 - CSS: formats page content
+    - SCSS: allows for tag nesting and variables
 - Javascript: power express app and route urls to pages
-    - jQuery: used in js to move components
-    - ajax: used in js for front end to call backend functions and handle response
+    - jQuery: DOM manipulation and traversal
+        - alternatives(React Framework)
+    - ajax: allows front end to make http requests to backend functions and handle response
+        - alternatives(fetch, axios)
+    - Highway: used for page transitions 
+        - not including landing page or reloads
+    - gsap: used for animations
 - paths in ejs file are relative to the endpoint that renders it
 - cookies store information in current session
 - res.cookie(key, value) to save cookie
