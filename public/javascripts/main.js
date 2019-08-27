@@ -21,6 +21,38 @@ function generateCompleteHTML(activity)
     </li>`;
 }
 
+function beforePageLoad(){
+    let $todoList = $(".notComplete");
+    let $completeList = $(".complete");
+
+    $todoList.empty();
+    $completeList.empty();
+
+    $.ajax({
+        url: `/todoActivities`,
+        type: "Get",
+        success: function(result){
+            // clears the input text and adds a todo element
+            console.log(result);
+            result.forEach((activity) => {
+                $todoList.append(generateTodoHTML(activity.activity));
+            });
+        }
+    });
+
+    $.ajax({
+        url: `/completeActivities`,
+        type: "Get",
+        success: function(result){
+            // clears the input text and adds a todo element
+            console.log(result);
+            result.forEach((activity) => {
+                $completeList.append(generateCompleteHTML(activity.activity));
+            });
+        }
+    });
+}
+
 function onPageLoad() {
     console.log("Document ready from main.");
     let $todoList = $(".notComplete");
@@ -106,4 +138,5 @@ function onPageLoad() {
     });
 }
 
-export default onPageLoad;
+export default {onPageLoad: onPageLoad,
+                beforePageLoad: beforePageLoad};

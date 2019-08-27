@@ -1,17 +1,18 @@
 // Import Highway
 import Highway from '@dogstudio/highway';
 import $ from "jquery"
-import onPageLoad from "./main.js"
+import Main from "./main.js"
 
 class CustomRenderer extends Highway.Renderer {
     // Hooks/methods
     onEnter() {
         console.log("onEnter");
         offsetTransitionBackground();
+        Main.beforePageLoad();
     }
     onEnterCompleted() {
         console.log("onEnterCompleted");
-        onPageLoad();
+        Main.onPageLoad();
     }
     onLeave() {
         console.log("onLeave");

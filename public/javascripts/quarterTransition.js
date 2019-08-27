@@ -11,10 +11,6 @@ class CustomTransition extends Highway.Transition {
         let tl = new TimelineMax({
             onComplete: () => {
                 done();
-                if(trigger.toString().includes("mylist"))
-                {
-                    location.reload(true);
-                }
             }
         });
 

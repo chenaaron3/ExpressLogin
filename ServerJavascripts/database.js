@@ -185,6 +185,7 @@ function removeFromActivityTable(complete, username, activity, callback) {
     });
 }
 
+// returns list of json activities
 function getAllActivityForUser(complete, username, callback) {
     let table = complete? completeTable : todoTable;
     var sql = `SELECT * FROM ${table} WHERE username = "${username}"`;

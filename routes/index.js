@@ -197,6 +197,22 @@ router.get("/email", function(req, res, next){
     sgMail.send(msg);
 });
 
+router.get("/todoActivities", function(req, res, next){
+    let username = req.cookies["username"];
+    database.getAllActivityForUser(false, username, function (todoList) {
+        res.json(todoList);
+        res.end();
+    })
+});
+
+router.get("/completeActivities", function(req, res, next){
+    let username = req.cookies["username"];
+    database.getAllActivityForUser(true, username, function (todoList) {
+        res.json(todoList);
+        res.end();
+    })
+});
+
 module.exports = router;
 
 console.log("End of index.js");
